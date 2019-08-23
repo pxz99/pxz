@@ -1,3 +1,4 @@
+// 小于10以下表达时前面加0
 var kits = {}
 kits.dispatchZero = function (num) {
   if (num < 10) {
@@ -5,7 +6,7 @@ kits.dispatchZero = function (num) {
   }
   return num
 }
-
+// 求出当前的年月日时分秒
 kits.formatDate = function () {
   var date = new Date()
   var year = date.getFullYear()
@@ -16,11 +17,11 @@ kits.formatDate = function () {
   var second = this.dispatchZero(date.getSeconds())
   return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
 }
-
+// 求一个随机整数
 kits.randomInt = function (n, m) {
   return Math.floor(Math.random() * (m - n + 1) + n)
 }
-
+// 获取id
 kits.getId = function () {
   let date = new Date()
   let time = date.getTime()
@@ -28,7 +29,7 @@ kits.getId = function () {
   let id = time + '' + r
   return id
 }
-
+// 判断是否单击
 function tap(element,fn){
   let startTime
   let startX,startY
@@ -61,7 +62,7 @@ function randomColor(){
   return "rgb("+r+","+g+","+b+")";
 }
 
-//获取十六进制颜色
+//获取一个随机的十六进制的颜色
 function randomColor1(){
   var r = Math.floor(Math.random()*256);
   var g = Math.floor(Math.random()*256);
