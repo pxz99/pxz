@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    let list = [
+      {
+        text: "广东",
+        list: [
+          {
+            text: "广州",
+            list: [
+              {
+                text: "天河",
+                list: [{ text: "珠吉" }, { text: "岗顶" }]
+              },
+              { text: "番禺" }
+            ]
+          },
+          { text: "深圳", list: [{ text: "宝安" }, { text: "南山" }] }
+        ]
+      },
+      {
+        text: "湖南",
+        list: [
+          { text: "长沙", list: [{ text: "芙蓉" }, { text: "天心" }] },
+          // 双拼  shuang  双  zhange  张  
+          { text: "衡阳", list: [{ text: "衡阳的区1111" }, { text: "衡阳的区2222" }] }
+        ]
+      }
+    ]
+    /* 
+    1 里面有多少个 text 那么就直接打印多少个 字符串即可  
+     */
+    // function showList(tmpList) {
+    //   tmpList.forEach(v => {
+    //     console.log(v.text);
+    //     v.list.forEach(vv => {
+    //       console.log(vv.text);
+    //     })
+    //   });
+    // }
+    function showList(tmpList) {
+      tmpList.forEach(v => {
+        console.log(v.text);
+        // 定一个结束的点 
+        if (v.list) {
+          showList(v.list);
+        }
+      });
+    }
+
+    showList(list);
+
+
+
+  </script>
+</body>
+
+</html>
